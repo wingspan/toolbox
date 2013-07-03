@@ -45,10 +45,10 @@
 + (NSString*) uuGenerateUniqueIdentifier
 {
 	CFUUIDRef uuid = CFUUIDCreate(NULL);
-	NSString* uniqueID = (NSString*)CFUUIDCreateString(NULL, uuid);
+	NSString* uniqueID = (NSString*)CFBridgingRelease(CFUUIDCreateString(NULL, uuid));
 	CFRelease(uuid);
 
-	return [uniqueID autorelease];
+	return uniqueID;
 }
 
 - (NSString*) uuUniqueIdentifierOS5

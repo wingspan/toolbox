@@ -121,24 +121,20 @@
 	UISwipeGestureRecognizer* swipeHandler = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(uuBackOneLetter)];
 	swipeHandler.direction = UISwipeGestureRecognizerDirectionLeft;
 	[self.superview addGestureRecognizer:swipeHandler];
-	[swipeHandler release];
 	
 	swipeHandler = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(uuAdvanceOneLetter)];
 	swipeHandler.direction = UISwipeGestureRecognizerDirectionRight;
 	[self.superview addGestureRecognizer:swipeHandler];
-	[swipeHandler release];
 
 	swipeHandler = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(uuBackOneWord)];
 	swipeHandler.numberOfTouchesRequired = 2;
 	swipeHandler.direction = UISwipeGestureRecognizerDirectionLeft;
 	[self.superview addGestureRecognizer:swipeHandler];
-	[swipeHandler release];
 	
 	swipeHandler = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(uuAdvanceOneWord)];
 	swipeHandler.numberOfTouchesRequired = 2;
 	swipeHandler.direction = UISwipeGestureRecognizerDirectionRight;
 	[self.superview addGestureRecognizer:swipeHandler];
-	[swipeHandler release];
 }
 
 

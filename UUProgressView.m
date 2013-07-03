@@ -80,13 +80,11 @@
     self.backgroundView = nil;
     self.label = nil;
     self.spinner = nil;
-    
-    [super dealloc];
 }
 
 - (void) createBackgroundView
 {
-	self.backgroundView = [[[UIView alloc] initWithFrame:self.frame] autorelease];
+	self.backgroundView = [[UIView alloc] initWithFrame:self.frame];
 	self.backgroundView.backgroundColor = [UIColor blackColor];
 	self.backgroundView.alpha = 0.75f;
 	self.backgroundView.autoresizingMask = (UIViewAutoresizingFlexibleLeftMargin  | UIViewAutoresizingFlexibleWidth |
@@ -99,7 +97,7 @@
 - (void) createSpinnerView
 {
 	CGFloat halfHeight = self.frame.size.height / 2.0f;
-	self.spinner = [[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite] autorelease];
+	self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
 	self.spinner.center = CGPointMake(18, halfHeight);
 	self.spinner.hidesWhenStopped = YES;
 	[self.spinner startAnimating];
@@ -110,7 +108,7 @@
 {
 	CGFloat halfHeight = self.frame.size.height / 2.0f;
 	CGFloat quarterHeight = halfHeight / 2.0f;
-	self.label = [[[UILabel alloc] initWithFrame:CGRectMake(42, quarterHeight, 103 , halfHeight)] autorelease];
+	self.label = [[UILabel alloc] initWithFrame:CGRectMake(42, quarterHeight, 103 , halfHeight)];
 	self.label.textAlignment = UITextAlignmentLeft;
 	self.label.textColor = [UIColor whiteColor];
 	self.label.backgroundColor = [UIColor clearColor];
@@ -128,12 +126,12 @@
 
 - (void) show:(BOOL)animated
 {
-    [self showWithBounceAnimation];
+    [self showProgressViewWithBounceAnimation];
 }
 
 - (void) hide:(BOOL)animated
 {
-	[self hideWithBounceAnimation];
+	[self hideProgressViewWithBounceAnimation];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
